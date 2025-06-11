@@ -1,7 +1,7 @@
 # PhD Thesis Project -- QSAR-Guided Design and Synthesis of Novel Inhibitors Targeting KRAS Protein-Protein Interactions
 
-Training and evaluation of ten regression algorithms on in-house library of KRAS protein-protein interaction inhibitors. The best model was selected to predict activities of the molecules from several molecular libraries regarding inhibition kras nucleotide exchange.
-# Python QSAR Pipeline for Screening of novel KRAS Protein-Protein Interaction Inhibitors (PPIIs)
+## Summary
+This project aimed at comparing the chemical space covered by a library of KRAS protein-protein (PPI) interaction inhibitors with  _small molecule_ inhibitors and known PPI inhibitors. The gained insights were used to select screening libraries. In order to select the most promising molecules from the libraries, the KRAS PPI inhibitor library was extended using the ChEMBL databasea. Appropriate features were selected and ten regression algorithms were trained and evaluated using nested five-fold cross validation. The best model was selected to predict activities of the molecules from several molecular libraries regarding inhibition of the KRAS nucleotide exchange. All code and workflows used in this project are provided here, with the goal of facilitating the implementation of machine learning in future medicinal chemistry projects.
 
 ## General Information
 This project was inspired by the pubication RSC Med. Chem., 2024, 15,
@@ -10,13 +10,19 @@ https://pubs.rsc.org/en/content/articlelanding/2024/md/d4md00063c.
 I used the code associated with the publication as a starting point for this project. The code can be found here:
 https://github.com/cristinaduo/ML-for-SOS1
 The code has been adapted significantly for this project. In especially, nested cross-validation was implemented as well as a feature selection pipeline.
+For a detailed discussion of this project please see my PhD thesis.
 
-## Data preparation and Analysis
-Knime was used to prepare the structures and target variables. [Data preparation workflow](knime_.knwf)
+## KNIME Workflows
+Knime was used to prepare the structures and target variables using a [data preparation workflow](knime_.knwf).
+The molecular shape space convered by some of the analysed libraried was visualised using _principal moment of inertia_ plots generated through a [PMI plot generator workflow](knime_pmi_plot_generator.knwf). For more info see [Sauer and Schwarz](https://doi.org/10.1021/ci025599w).
+The _rule of five_ and _rule of four_ compliance of the analysed libraries was visualised in a bar chart using a [molecular descriptor analysis workflow](knime_molecular_descriptor_analysis.knwf). Additionally, some molecular descriptor histograms were plotted, i.e. molecular weight, topological polar surface area, logP, H-bond acceptor count, H-bond donor count, ring count. 
+Furthermore, extensive libraries of achiral cyclic tri- and tetrapeptides, as well as click-cyclised tetrapeptides, were generated using a [cyclic peptide library generation workflow](knime_reaction_enumeration_cyclic_peptide_library).
 
+## Anaconda Environments
+The chemoinformatics software libraries [RDKit](https://www.rdkit.org/) and [Mordred](https://github.com/mordred-descriptor/mordred) were used in this project. Mordred was only used for molecular descriptor calculation. One anaconda environment was used for each, i.e. [RDKit environment](python_qsar/environments/my-rdkit-env.yml) and [Mordred environment](python_qsar/environments/mordred-env.yml).
 
-Two anaconda environments were used:
-
+## Matplotlib Notebooks
+The 
 ## Description
 ### Data Preparation
 This project was created during my PhD studies in the Scherkenbeck group at the BUW.
