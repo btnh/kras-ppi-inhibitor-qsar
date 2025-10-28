@@ -13,10 +13,10 @@ The code has been adapted significantly for this project. In especially, nested 
 For a detailed discussion of this project please see my PhD thesis.
 
 ## KNIME Workflows
-Knime was used to prepare the structures and target variables using a [data preparation workflow](knime_.knwf).
+Knime was used to prepare the structures and target variables using a [data preparation workflow](knime_standardisation.knwf).
 The molecular shape space convered by some of the analysed libraried was visualised using _principal moment of inertia_ plots generated through a [PMI plot generator workflow](knime_pmi_plot_generator.knwf). For more info see [Sauer and Schwarz](https://doi.org/10.1021/ci025599w).
 The _rule of five_ and _rule of four_ compliance of the analysed libraries was visualised in a bar chart using a [molecular descriptor analysis workflow](knime_molecular_descriptor_analysis.knwf). Additionally, some molecular descriptor histograms were plotted, i.e. molecular weight, topological polar surface area, logP, H-bond acceptor count, H-bond donor count, ring count. 
-Furthermore, extensive libraries of achiral cyclic tri- and tetrapeptides, as well as click-cyclised tetrapeptides, were generated using a [cyclic peptide library generation workflow](knime_reaction_enumeration_cyclic_peptide_library).
+Furthermore, extensive libraries of achiral cyclic tri- and tetrapeptides, as well as click-cyclised tetrapeptides, were generated using a [cyclic peptide library generation workflow](knime_reaction_enumeration_cyclic_peptide_library.knwf).
 
 ## Anaconda Environments
 The chemoinformatics software libraries [RDKit](https://www.rdkit.org/) and [Mordred](https://github.com/mordred-descriptor/mordred) were used in this project. Mordred was only used for molecular descriptor calculation. One anaconda environment was used for each, i.e. [RDKit environment](python_qsar/environments/my-rdkit-env.yml) and [Mordred environment](python_qsar/environments/mordred-env.yml).
